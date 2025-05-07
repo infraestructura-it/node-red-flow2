@@ -1,0 +1,9 @@
+version: '3'
+services:
+  nodered:
+    build: .  # Indica que construya la imagen desde el Dockerfile de la raíz
+    ports:
+      - "1880:1880"  # Mapea el puerto 1880 del contenedor al puerto 1880 de tu máquina
+    volumes:
+      - ./data:/data  # Mapea la carpeta de flujos (local) al contenedor
+    restart: always  # Asegura que el contenedor se reinicie si se cae
